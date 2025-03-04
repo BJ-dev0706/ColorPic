@@ -27,7 +27,7 @@ A simple and intuitive Python-based color picker application. This tool allows y
 2. **Navigate to the project directory**:
 
    ```bash
-   cd YOUR_REPO
+   cd ColorPic
    ```
 
 3. **Install the required dependencies**:
