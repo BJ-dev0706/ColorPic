@@ -1,88 +1,148 @@
-# Color Picker
+# ColorPic
 
-A simple and intuitive Python-based color picker application. This tool allows you to quickly grab any color from your screen and copy it to your clipboard in HEX format. Perfect for designers, developers, or anyone who needs to work with consistent color values.
+A professional Python-based color picker application with a modern, clean interface. This tool allows you to quickly grab any color from your screen and copy it to your clipboard in HEX format. Perfect for designers, developers, or anyone who needs to work with consistent color values.
 
 ## Features
 
-- **Pick any color from your screen** by clicking anywhere on your desktop.
-- **Live color preview** visible once you pick a color, showing a swatch of the selected color.
-- **Simple "Copy Color" button** to copy the selected color's HEX code to your clipboard.
-- **CustomTkinter** interface for a modern, clean look.
+- **Pick any color from your screen** by clicking anywhere on your desktop
+- **Live color preview** with visual swatch of the selected color
+- **One-click copy** to clipboard in HEX format
+- **Modern UI** built with CustomTkinter for a professional look
+- **Modular architecture** with clean separation of concerns
+- **Comprehensive testing** with unit tests included
+
+## Project Structure
+
+```
+ColorPic/
+├── src/                    # Source code package
+│   ├── __init__.py        # Package initialization
+│   ├── config.py          # Configuration settings
+│   ├── utils.py           # Utility functions
+│   ├── color_picker.py    # Core color picking logic
+│   └── ui.py              # User interface components
+├── tests/                 # Test package
+│   ├── __init__.py        # Test package initialization
+│   └── test_utils.py      # Unit tests for utilities
+├── docs/                  # Documentation
+│   └── README.md          # Technical documentation
+├── main.py                # Application entry point
+├── setup.py               # Package setup configuration
+├── requirements.txt       # Python dependencies
+├── MANIFEST.in           # Package manifest
+├── README.md             # This file
+├── LICENSE               # License file
+└── .gitignore            # Git ignore rules
+```
 
 ## Getting Started
 
 ### Prerequisites
 
-- **Python 3.6+**  
+- **Python 3.8+**  
 - **pip** (Python package manager)
 
 ### Installation
 
-1. **Clone this repository** or [download the source code](https://github.com/BJ-dev0706/ColorPic/archive/refs/heads/main.zip):
+1. **Clone this repository**:
 
    ```bash
    git clone https://github.com/BJ-dev0706/ColorPic.git
-   ```
-
-2. **Navigate to the project directory**:
-
-   ```bash
    cd ColorPic
    ```
 
-3. **Install the required dependencies**:
+2. **Install dependencies**:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-   > *Note: If you do not have a `requirements.txt` yet, you can install the needed libraries like so:*  
+3. **Optional: Install as a package**:
+
    ```bash
-   pip install pyautogui customtkinter
+   pip install -e .
    ```
 
 ### Usage
 
-1. Run the application:
+#### Running the Application
 
-   ```bash
-   python index.py
-   ```
+```bash
+python main.py
+```
 
-2. Click the **"Pick Color from Screen"** button. A semi-transparent fullscreen overlay will appear.
-3. Move your cursor to the pixel you want to sample, then click. The application will display the selected color and provide its HEX code.
-4. Click **"Copy Color"** to copy the HEX code to your clipboard for use in design programs, IDEs, or anywhere else.
+#### Using the Color Picker
 
-### About the Code
+1. Click **"Pick Color from Screen"** - a semi-transparent overlay appears
+2. Move your cursor to any pixel and click to sample the color
+3. The selected color appears with its HEX code
+4. Click **"Copy Color"** to copy the HEX code to your clipboard
 
-- **`index.py`**: Contains the main logic, including:
-  - `pick_color_from_screen()`: Creates the fullscreen overlay and captures mouse clicks for color selection.
-  - `capture_screen_color(event)`: Determines the color from the screen at the clicked point and updates the label.
-  - `copy_color()`: Copies the current color value to your clipboard.
-- **CustomTkinter**: A modern reimagining of Tkinter for better UI styling and theming.
-- **PyAutoGUI**: Used to capture screen pixels for color reading.
+#### Running Tests
+
+```bash
+python -m unittest discover tests
+```
+
+## Architecture
+
+### Core Components
+
+- **`src/config.py`**: Centralized configuration and constants
+- **`src/utils.py`**: Color conversion and utility functions
+- **`src/color_picker.py`**: Core color picking logic with overlay management
+- **`src/ui.py`**: User interface components and layout
+- **`main.py`**: Application entry point
+
+### Key Features
+
+- **Modular Design**: Clean separation between UI, logic, and utilities
+- **Configuration Management**: Centralized settings for easy customization
+- **Type Hints**: Full type annotation for better code quality
+- **Documentation**: Comprehensive docstrings and comments
+- **Testing**: Unit tests for critical functionality
+
+## Development
+
+### Setting up Development Environment
+
+```bash
+# Clone and setup
+git clone https://github.com/BJ-dev0706/ColorPic.git
+cd ColorPic
+
+# Install in development mode
+pip install -e .
+
+# Run tests
+python -m unittest discover tests -v
+```
+
+### Code Style
+
+- Follow PEP 8 guidelines
+- Use type hints for all functions
+- Include docstrings for all classes and methods
+- Maintain test coverage for new features
 
 ## Contributing
 
-1. Fork the project.
-2. Create your feature branch:  
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. Commit your changes:  
-   ```bash
-   git commit -m "Add some AmazingFeature"
-   ```
-4. Push to the branch:  
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-5. Open a pull request explaining your changes.
+1. Fork the project
+2. Create your feature branch: `git checkout -b feature/AmazingFeature`
+3. Commit your changes: `git commit -m "Add some AmazingFeature"`
+4. Push to the branch: `git push origin feature/AmazingFeature`
+5. Open a pull request
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE). You are free to use, modify, and distribute this project, but please provide attribution back to the original repository.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Built with [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) for modern UI
+- Uses [PyAutoGUI](https://github.com/asweigart/pyautogui) for screen capture
+- Inspired by the need for a simple, professional color picker tool
 
 ---
 
-Thank you for checking out **Color Picker**! If you find this project useful, please consider giving a ⭐ on [GitHub](https://github.com/BJ-dev0706/ColorPic). Feel free to open issues or pull requests if you have any questions or improvements.
+⭐ **Star this repository** if you find it useful! Feel free to open issues or pull requests for improvements.

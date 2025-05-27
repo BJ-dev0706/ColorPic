@@ -1,0 +1,1 @@
+# ColorPic - A professional color picker application 
